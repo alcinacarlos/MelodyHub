@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Melody Hub</string>
+    <string name="motivation3">Escucha música con la mejor calidad en</string>
+    <string name="motivation1">Cada canción es un nuevo comienzo.</string>
+    <string name="motivation2">Conecta con el ritmo de tu vida.</string>
+    <string name="signin">Crear Cuenta</string>
+    <string name="login">Iniciar Sesión</string>
+    <string name="email">CORREO ELECTRÓNICO</string>
+    <string name="password">CONTRASEÑA</string>
+    <string name="keep_logged_in">Mantener sesión iniciada</string>
+    <string name="cantlogin">¿No puedes iniciar sesión?</string>
+    <string name="cantsignin">¿No quieres crear una cuenta?</string>
+    <string name="welcome">Bienvenido!</string>
+    <string name="enter">Accede a tu cuenta de MelodyHub</string>
+</resources>
