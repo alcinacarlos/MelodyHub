@@ -17,7 +17,7 @@ fun AppNavigation(exoPlayer: ExoPlayer){
     val navControlador = rememberNavController()
     val loginViewModel = LoginViewModel()
 
-    NavHost(navController = navControlador, startDestination = AppScreen.MainScreen.route) {
+    NavHost(navController = navControlador, startDestination = AppScreen.InitialScreen.route) {
         composable(AppScreen.InitialScreen.route){
             InitialScreen(navControlador)
         }

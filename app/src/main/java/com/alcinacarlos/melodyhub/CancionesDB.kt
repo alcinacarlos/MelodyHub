@@ -114,7 +114,7 @@ object CancionesDB {
             artista = "Metallica",
             album = albums[1],
             genero = "Heavy Metal",
-            ruta = "master_puppets"
+            ruta = "welcomehome"
         ),
     )
 }

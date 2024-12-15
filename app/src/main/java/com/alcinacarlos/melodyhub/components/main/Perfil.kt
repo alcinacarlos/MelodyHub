@@ -10,7 +10,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -24,9 +26,9 @@ fun Perfil(loginViewModel: LoginViewModel) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(20.dp),
+            .padding(30.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Top
+        verticalArrangement = Arrangement.Center
     ) {
         Box(
             modifier = Modifier
@@ -50,7 +52,8 @@ fun Perfil(loginViewModel: LoginViewModel) {
             text = "Nombre del Usuario",
             fontSize = 25.sp,
             fontWeight = FontWeight.SemiBold,
-            textAlign = TextAlign.Center
+            textAlign = TextAlign.Center,
+            color = colorResource(R.color.white)
         )
 
         Spacer(modifier = Modifier.height(8.dp))
@@ -58,7 +61,8 @@ fun Perfil(loginViewModel: LoginViewModel) {
         Text(
             text = "${loginViewModel.email.value}",
             fontSize = 20.sp,
-            fontWeight = FontWeight.SemiBold
+            fontWeight = FontWeight.SemiBold,
+            color = colorResource(R.color.white)
         )
 
         Spacer(modifier = Modifier.height(20.dp))
@@ -68,7 +72,7 @@ fun Perfil(loginViewModel: LoginViewModel) {
             modifier = Modifier.fillMaxWidth(0.6f),
             shape = RoundedCornerShape(50)
         ) {
-            Text(text = "Editar Perfil", fontSize = 16.sp)
+            Text(text = "Editar Perfil", fontSize = 17.sp)
         }
     }
 }
