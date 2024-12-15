@@ -49,16 +49,18 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.media3.exoplayer.ExoPlayer
 import com.alcinacarlos.melodyhub.CancionesDB
 import com.alcinacarlos.melodyhub.R
 import com.alcinacarlos.melodyhub.components.music.MusicHome
+import com.alcinacarlos.melodyhub.components.music.MusicPlayer
 import com.alcinacarlos.melodyhub.model.NavigationItem
 import com.alcinacarlos.melodyhub.viewmodel.LoginViewModel
 import kotlinx.coroutines.launch
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun MainBody(loginViewModel: LoginViewModel){
+fun MainBody(loginViewModel: LoginViewModel, exoPlayer: ExoPlayer){
     val snackBarHostState = remember { SnackbarHostState() }
     val coroutineScope  = rememberCoroutineScope()
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
@@ -174,23 +176,25 @@ fun MainBody(loginViewModel: LoginViewModel){
                 )
             }
         ) {
-            SelectecScreen(selectedItemIndex, loginViewModel)
+            SelectecScreen(selectedItemIndex, loginViewModel, exoPlayer)
         }
     }
 }
 
 @Composable
-fun SelectecScreen(selectedItemIndex:Int , loginViewModel:LoginViewModel){
+fun SelectecScreen(selectedItemIndex:Int , loginViewModel:LoginViewModel, exoPlayer: ExoPlayer){
+    val currentSongSelected = remember { mutableIntStateOf(0) }
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .padding(top = 110.dp)
+            .padding(top = 100.dp, bottom = 80.dp)
             .background(colorResource(R.color.black)),
         contentAlignment = Alignment.Center
     ) {
+        MusicPlayer(exoPlayer, CancionesDB.canciones, currentSongSelected.intValue)
         when(selectedItemIndex){
             0 -> {
-                MusicHome()
+                MusicHome(exoPlayer) { currentSongSelected.intValue = it}
             }
             1 -> {
                 Column(

@@ -9,6 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#808080 </color>
     <color name="grayblack">#2F2F2F</color>
+    <color name="grayblack2">#141414</color>
     <color name="background">#caf0f8</color>
     <color name="naranja">#ff9000</color>
     <color name="naranja2">#90FF9000</color>

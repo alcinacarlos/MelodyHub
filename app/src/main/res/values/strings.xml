@@ -12,4 +12,5 @@
     <string name="cantsignin">¿No quieres crear una cuenta?</string>
     <string name="welcome">Bienvenido!</string>
     <string name="enter">Accede a tu cuenta de MelodyHub</string>
+    <string name="urihardcodeado">android.resource://com.alcinacarlos.melodyhub/raw/</string>
 </resources>

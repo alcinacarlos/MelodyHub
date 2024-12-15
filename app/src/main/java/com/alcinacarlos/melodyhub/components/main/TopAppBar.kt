@@ -1,5 +1,7 @@
 package com.alcinacarlos.melodyhub.components.main
 
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
@@ -24,6 +26,7 @@ fun MainTopAppBar(
     openDrawer: () -> Unit
 ){
     TopAppBar(
+        modifier = Modifier.fillMaxWidth().height(100.dp),
         title = {
             Text(stringResource(R.string.app_name))
         },

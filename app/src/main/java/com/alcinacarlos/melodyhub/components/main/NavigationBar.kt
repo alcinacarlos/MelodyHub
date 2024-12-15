@@ -2,6 +2,8 @@ package com.alcinacarlos.melodyhub.components.main
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.rounded.Album
@@ -16,6 +18,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.unit.dp
 import com.alcinacarlos.melodyhub.R
 
 @Composable
@@ -24,7 +27,7 @@ fun MainNavigationBar(
     index: Int
 ) {
     Box(
-        modifier = Modifier.fillMaxSize(),
+        modifier = Modifier.fillMaxWidth().height(90.dp),
         contentAlignment = Alignment.BottomCenter
     ) {
         NavigationBar(
