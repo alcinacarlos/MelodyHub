@@ -12,22 +12,16 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.Logout
-import androidx.compose.material.icons.automirrored.outlined.Logout
 import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.Album
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Info
-import androidx.compose.material.icons.filled.Logout
 import androidx.compose.material.icons.filled.Settings
-import androidx.compose.material.icons.filled.ShoppingBag
 import androidx.compose.material.icons.outlined.AccountCircle
 import androidx.compose.material.icons.outlined.Album
 import androidx.compose.material.icons.outlined.Home
 import androidx.compose.material.icons.outlined.Info
-import androidx.compose.material.icons.outlined.Logout
 import androidx.compose.material.icons.outlined.Settings
-import androidx.compose.material.icons.outlined.ShoppingBag
 import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
@@ -56,20 +50,18 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.media3.exoplayer.ExoPlayer
-import androidx.navigation.NavController
 import com.alcinacarlos.melodyhub.CancionesDB
 import com.alcinacarlos.melodyhub.R
 import com.alcinacarlos.melodyhub.components.music.AlbumList
 import com.alcinacarlos.melodyhub.components.music.MusicHome
 import com.alcinacarlos.melodyhub.components.music.MusicPlayer
 import com.alcinacarlos.melodyhub.model.NavigationItem
-import com.alcinacarlos.melodyhub.navigation.AppScreen
 import com.alcinacarlos.melodyhub.viewmodel.LoginViewModel
 import kotlinx.coroutines.launch
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun MainBody(loginViewModel: LoginViewModel, exoPlayer: ExoPlayer, navController: NavController) {
+fun MainBody(loginViewModel: LoginViewModel, exoPlayer: ExoPlayer) {
     val snackBarHostState = remember { SnackbarHostState() }
     val coroutineScope = rememberCoroutineScope()
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
@@ -105,11 +97,6 @@ fun MainBody(loginViewModel: LoginViewModel, exoPlayer: ExoPlayer, navController
                         title = "Ajustes",
                         selectedIcon = Icons.Default.Settings,
                         unselectedIcon = Icons.Outlined.Settings
-                    ),
-                    NavigationItem(
-                        title = "Cerrar sesión",
-                        selectedIcon = Icons.AutoMirrored.Filled.Logout,
-                        unselectedIcon = Icons.AutoMirrored.Outlined.Logout
                     )
                 )
                 Row(
@@ -194,13 +181,13 @@ fun MainBody(loginViewModel: LoginViewModel, exoPlayer: ExoPlayer, navController
                 )
             }
         ) {
-            SelectecScreen(selectedItemIndex, loginViewModel, exoPlayer ,navController)
+            SelectedScreen(selectedItemIndex, loginViewModel, exoPlayer)
         }
     }
 }
 
 @Composable
-fun SelectecScreen(seccionSeleccionada: Int, loginViewModel: LoginViewModel, exoPlayer: ExoPlayer, navController: NavController) {
+fun SelectedScreen(seccionSeleccionada: Int, loginViewModel: LoginViewModel, exoPlayer: ExoPlayer) {
     val currentSongSelected = remember { mutableIntStateOf(0) }
 
     Box(
@@ -247,9 +234,6 @@ fun SelectecScreen(seccionSeleccionada: Int, loginViewModel: LoginViewModel, exo
 
             4 -> {
                 Text(text = "Ajustes", fontSize = 20.sp, fontWeight = FontWeight.SemiBold, color = colorResource(R.color.white))
-            }
-            5 -> {
-                navController.navigate(route = AppScreen.LoginScreen.route)
             }
         }
     }

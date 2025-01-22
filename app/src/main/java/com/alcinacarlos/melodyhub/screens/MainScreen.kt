@@ -7,6 +7,6 @@ import com.alcinacarlos.melodyhub.components.main.MainBody
 import com.alcinacarlos.melodyhub.viewmodel.LoginViewModel
 
 @Composable
-fun MainScreen(navController: NavController, loginViewModel: LoginViewModel, exoPlayer: ExoPlayer) {
-    MainBody(loginViewModel, exoPlayer, navController)
+fun MainScreen(loginViewModel: LoginViewModel, exoPlayer: ExoPlayer) {
+    MainBody(loginViewModel, exoPlayer)
 }

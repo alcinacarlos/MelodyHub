@@ -125,7 +125,7 @@ fun NextButton(pagerState: PagerState, coroutineScope: CoroutineScope) {
         ) {
             Icon(
                 imageVector = Icons.AutoMirrored.Filled.ArrowForward,
-                contentDescription = "Arrow"
+                contentDescription = "Next Button"
             )
         }
     }
@@ -156,7 +156,7 @@ fun BackButton(pagerState: PagerState, coroutineScope: CoroutineScope) {
         ) {
             Icon(
                 imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                contentDescription = "Arrow"
+                contentDescription = "Back Button"
             )
         }
     }

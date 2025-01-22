@@ -100,7 +100,7 @@ fun LoginRegisterButtons(iniciarSesion : () -> Unit, registrarse : () -> Unit) {
             colors = ButtonDefaults.buttonColors(containerColor = colorResource(R.color.naranja))
         ) {
             Text(
-                text = "Iniciar sesión",
+                text = "Iniciar sesion",
                 style = TextStyle(
                     fontWeight = FontWeight.Bold,
                     fontSize = 18.sp,

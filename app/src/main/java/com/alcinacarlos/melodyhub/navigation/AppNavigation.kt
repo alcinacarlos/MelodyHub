@@ -2,7 +2,6 @@ package com.alcinacarlos.melodyhub.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.media3.exoplayer.ExoPlayer
-import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.*
 import androidx.navigation.compose.rememberNavController
 import com.alcinacarlos.melodyhub.screens.InitialScreen
@@ -23,7 +22,7 @@ fun AppNavigation(exoPlayer: ExoPlayer){
         }
 
         composable(AppScreen.MainScreen.route){
-            MainScreen(navControlador, loginViewModel, exoPlayer)
+            MainScreen(loginViewModel, exoPlayer)
         }
 
         composable(AppScreen.LoginScreen.route){
